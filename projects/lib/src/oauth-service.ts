@@ -362,7 +362,8 @@ export class OAuthService extends AuthConfig {
                 if (!fullUrl.endsWith('/')) {
                     fullUrl += '/';
                 }
-                fullUrl += '.well-known/openid-configuration';
+                // removing to support Azure B2C custom issuer URI
+                // fullUrl += '.well-known/openid-configuration';
             }
 
             if (!this.validateUrlForHttps(fullUrl)) {
